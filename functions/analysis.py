@@ -13,7 +13,6 @@ def compute_acf(series: pd.Series, nlags: int = 48) -> pd.Series:
     :param nlags: number of lags to compute
     :return: pandas.Series of ACF values indexed by the specified lag (0..nlags)
     """
-    
     if series.empty:
         raise ValueError("Empty series provided to compute_acf")
     vals = acf(series.values, nlags=nlags, fft=True, missing="conservative")
