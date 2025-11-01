@@ -7,7 +7,7 @@ import numpy as np
 import pandas as pd
 from statsmodels.tsa.stattools import acf
 
-def compute_acf(series: pd.Series, nlags: int = 36) -> pd.Series:
+def compute_acf(series: pd.Series, nlags: int = 48) -> pd.Series:
     """
     :param series: time-indexed series
     :param nlags: number of lags to compute
