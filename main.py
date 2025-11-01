@@ -5,7 +5,6 @@ Main:
 """
 from pathlib import Path
 from typing import Optional
-import pandas as pd
 import matplotlib.pyplot as plt
 from functions.analysis import compute_acf
 from functions.data_loader import load_time_series
@@ -35,8 +34,8 @@ def time_series_acf(
     check_dir(out_path)
 
     series = load_time_series(
-        input_file, 
-        datetime_col=datetime_col, 
+        input_file,
+        datetime_col=datetime_col,
         value_col=value_col,
         datetime_format=datetime_format
     )
@@ -49,8 +48,6 @@ def time_series_acf(
 
     plt.show()
 
-    return None
-
 if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser(description="Compute and plot ACF for a time series")
@@ -61,9 +58,7 @@ if __name__ == "__main__":
     parser.add_argument("--output_dir", help="Directory to save plot", default="output")
     parser.add_argument("--plot_name", help="Name to give saved plot", default="acf_plot")
     parser.add_argument("--datetime_format", help="Datetime format", default=None)
-    
     args = parser.parse_args()
-    
     time_series_acf(
         input_file=args.input_file,
         value_col=args.value_col,

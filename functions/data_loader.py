@@ -8,9 +8,9 @@ from typing import Optional
 import pandas as pd
 
 def load_time_series(
-    csv_path: str, 
-    datetime_col: str, 
-    value_col: str, 
+    csv_path: str,
+    datetime_col: str,
+    value_col: str,
     datetime_format: Optional[str] = None
 ) -> pd.Series:
     """

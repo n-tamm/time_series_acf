@@ -10,7 +10,4 @@ def check_dir(path: str) -> None:
     :param path: Directory path
     :return: None
     """
-
     Path(path).mkdir(parents=True, exist_ok=True)
-    
-    return None
