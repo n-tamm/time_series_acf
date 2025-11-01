@@ -16,7 +16,7 @@ def plot_acf(acf_values: pd.Series, out_path: str) -> None:
     
     out_path = Path(out_path)
     fig, ax = plt.subplots(figsize=(8, 4))
-    ax.stem(acf_values.index, acf_values.values, use_line_collection=True)
+    ax.stem(acf_values.index, acf_values.values)
     ax.set_xlabel("Lag")
     ax.set_ylabel("ACF")
     ax.set_title("Autocorrelation (ACF)")
