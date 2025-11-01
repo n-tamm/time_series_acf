@@ -17,6 +17,7 @@ def load_time_series(
     :param csv_path: Path to CSV file
     :param datetime_col: Name of the datetime column
     :param value_col: Name of the numeric column to analyze
+    :param datetime_format: Optional format for datetime if in an odd format
     :return: pandas.Series indexed by datetime
     """
 
