@@ -15,6 +15,7 @@ from functions.utils import check_dir
 # Using class to get around pylint param error
 @dataclass
 class ACF:
+    """Holds parameters for running the autocorrelation analysis."""
     input_file: str
     datetime_col: Optional[str]
     value_col: str
@@ -60,7 +61,7 @@ if __name__ == "__main__":
     parser.add_argument("--plot_name", help="Name to give saved plot", default="acf_plot")
     parser.add_argument("--datetime_format", help="Datetime format", default=None)
     args = parser.parse_args()
-    config = ACF(
+    acf_config = ACF(
         input_file=args.input_file,
         datetime_col=args.datetime_col,
         value_col=args.value_col,
@@ -69,4 +70,4 @@ if __name__ == "__main__":
         plot_name=args.plot_name,
         datetime_format=args.datetime_format,
     )
-    time_series_acf(config)
+    time_series_acf(acf_config)
